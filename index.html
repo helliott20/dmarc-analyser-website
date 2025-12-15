@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <title>Stop Email Spoofing - DMARC Analyser | Monitor & Protect Your Brand</title>
+  <meta name="description" content="Real-time DMARC monitoring with AI-powered insights to stop email spoofing and phishing. Prevent brand impersonation. Start your free 14-day trial.">
+  <meta name="keywords" content="DMARC monitoring, email authentication, SPF, DKIM, email security, deliverability, anti-spoofing">
+  <meta name="author" content="Redactbox">
+  <link rel="canonical" href="https://dmarcanalyser.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dmarcanalyser.io">
+  <meta property="og:title" content="Stop Email Spoofing - DMARC Analyser | Monitor & Protect Your Brand">
+  <meta property="og:description" content="Real-time DMARC monitoring with AI-powered insights to stop email spoofing and phishing. Start your free 14-day trial today.">
+  <meta property="og:image" content="https://dmarcanalyser.io/og-image.png">
+  <meta property="og:image:alt" content="DMARC Analyser - Email Security Monitoring Dashboard">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stop Email Spoofing - DMARC Analyser">
+  <meta name="twitter:description" content="Real-time DMARC monitoring with AI-powered insights. Stop email spoofing and phishing attacks.">
+  <meta name="twitter:image" content="https://dmarcanalyser.io/og-image.png">
+  <meta name="twitter:creator" content="@redactbox">
+
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#6366f1',
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            },
+            'primary-foreground': '#ffffff',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DMARC Analyser",
+    "url": "https://dmarcanalyser.io",
+    "logo": "https://dmarcanalyser.io/favicon.ico",
+    "description": "Real-time DMARC monitoring with AI-powered insights to prevent email spoofing and protect brand reputation.",
+    "sameAs": [
+      "https://github.com/helliott20/dmarc-analyser"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Redactbox",
+      "url": "https://redactbox.co.uk"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DMARC Analyser",
+    "description": "Real-time DMARC monitoring and email authentication analysis platform with AI-powered insights.",
+    "url": "https://dmarcanalyser.io",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, SaaS",
+    "offers": {
+      "@type": "Offer",
+      "price": "10",
+      "priceCurrency": "GBP",
+      "priceValidUntil": "2026-12-31",
+      "description": "Starting at 10 GBP per month base fee plus 3 GBP per domain"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "50",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Redactbox"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dmarcanalyser.io"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Features",
+        "item": "https://dmarcanalyser.io/#features"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pricing",
+        "item": "https://dmarcanalyser.io/pricing.html"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(to bottom, rgba(99, 102, 241, 0.03), transparent);
+    }
+    .radial-bg {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.1), transparent);
+    }
+    /* Mobile menu animation */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    /* Button focus states for accessibility */
+    .btn-primary:focus-visible {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+    }
+    .btn-secondary:focus-visible {
+      outline: 2px solid #6b7280;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <div class="container mx-auto flex h-16 items-center justify-between px-4">
+      <a href="/" class="flex items-center space-x-2" title="DMARC Analyser - Email Security Monitoring">
+        <svg class="h-6 w-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="DMARC Analyser logo">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+        <span class="font-bold text-xl text-gray-900">DMARC Analyser</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#features" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+        <a href="pricing.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+        <a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://app.dmarcanalyser.io/login" class="hidden sm:inline-flex text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Sign In</a>
+        <a href="https://app.dmarcanalyser.io/login" class="btn-primary inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">
+          Start Free Trial
+        </a>
+        <!-- Mobile menu button -->
+        <button type="button" id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false" aria-label="Open main menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl md:hidden">
+      <div class="flex items-center justify-between p-4 border-b">
+        <span class="font-bold text-lg">Menu</span>
+        <button type="button" id="mobile-menu-close" class="rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-label="Close menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="p-4 space-y-2">
+        <a href="#features" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">Features</a>
+        <a href="pricing.html" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">Pricing</a>
+        <a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">GitHub</a>
+        <div class="pt-4 border-t mt-4">
+          <a href="https://app.dmarcanalyser.io/login" class="block px-4 py-3 text-base font-medium text-gray-600 rounded-lg hover:bg-gray-50">Sign In</a>
+          <a href="https://app.dmarcanalyser.io/login" class="mt-2 block w-full text-center px-4 py-3 text-base font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-500">Start Free Trial</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Mobile menu backdrop -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-gray-900/50 z-40 hidden md:hidden" aria-hidden="true"></div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden gradient-bg radial-bg">
+    <div class="container mx-auto px-4 py-24 md:py-32 lg:py-40">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Badge -->
+        <div class="mb-8 inline-flex">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-medium border border-indigo-200 bg-indigo-50 text-indigo-700 rounded-full">
+            <svg class="mr-2 h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            Open Source & Self-Hostable
+          </span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+          <span>Stop Email Spoofing.</span>
+          <br>
+          <span class="text-gray-500">Protect Your Brand with DMARC Analyser.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Monitor your DMARC reports in real-time, identify unauthorised senders,
+          and get AI-powered recommendations to improve your email deliverability.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="https://app.dmarcanalyser.io/login" class="btn-primary inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg bg-indigo-600 text-white shadow-md hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all hover:shadow-lg">
+            Start Free Trial
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="pricing.html" class="btn-secondary inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500 transition-colors">
+            View Pricing
+          </a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
+          <span class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            14-day free trial
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            No credit card required
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Bring your own Gmail &amp; API keys
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Provider Requirements Section -->
+  <section class="border-y bg-gradient-to-r from-amber-50 to-orange-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="h-16 w-16 rounded-full bg-amber-100 flex items-center justify-center">
+              <svg class="h-8 w-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="text-center md:text-left">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              Gmail, Yahoo &amp; Microsoft now require DMARC
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              As of 2024, major email providers reject or spam emails from domains without proper DMARC, SPF, and DKIM authentication.
+              If you send over 5,000 emails per day to Gmail or Yahoo, <strong>DMARC compliance is mandatory</strong>.
+              Without it, your emails may never reach your customers.
+            </p>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex items-center justify-center gap-2 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200">
+            <svg class="h-6 w-6 text-red-500" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+            </svg>
+            <span class="font-semibold text-gray-700">Gmail</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200">
+            <svg class="h-6 w-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm6.804 16.637l-2.222-6.844c-.25-.813-.818-.929-1.305-.929H8.723c-.487 0-1.055.116-1.305.929l-2.222 6.844c-.205.635.222 1.363.951 1.363h3.054v-4.286h2.598V18h3.054c.729 0 1.156-.728.951-1.363z"/>
+            </svg>
+            <span class="font-semibold text-gray-700">Yahoo</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200">
+            <svg class="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 0h11.377v11.372H0zm12.623 0H24v11.372H12.623zM0 12.623h11.377V24H0zm12.623 0H24V24H12.623z"/>
+            </svg>
+            <span class="font-semibold text-gray-700">Microsoft</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200">
+            <svg class="h-6 w-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"/>
+            </svg>
+            <span class="font-semibold text-gray-700">and more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bring Your Own Section -->
+  <section class="py-16 md:py-20 bg-gradient-to-b from-indigo-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium bg-indigo-100 text-indigo-700 rounded-full mb-4">
+            <svg class="mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+            </svg>
+            Bring Your Own
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Your accounts. Your keys. Your control.</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Unlike other DMARC tools, we don't lock you into our infrastructure. Connect your own services and keep full control.
+          </p>
+        </div>
+
+        <!-- Email Integrations Row -->
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Email Integrations</h3>
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+          <!-- Gmail Card -->
+          <div class="relative rounded-xl border-2 border-indigo-200 bg-white p-6 shadow-sm">
+            <div class="absolute -top-3 left-6">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-indigo-600 text-white rounded-full">Gmail / Google Workspace</span>
+            </div>
+            <div class="flex items-start gap-4 mt-2">
+              <div class="h-12 w-12 rounded-lg flex items-center justify-center bg-red-100 flex-shrink-0">
+                <svg class="h-7 w-7 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Connect Your Gmail</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Link your Gmail or Google Workspace account via secure OAuth. DMARC reports are automatically synced from your inbox.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-600">
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Secure OAuth authentication
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Auto-discover domains from reports
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Revoke access anytime
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Microsoft Card - Coming Soon -->
+          <div class="relative rounded-xl border-2 border-dashed border-gray-300 bg-gray-50/50 p-6">
+            <div class="absolute -top-3 left-6">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-amber-500 text-white rounded-full">Coming Soon</span>
+            </div>
+            <div class="flex items-start gap-4 mt-2">
+              <div class="h-12 w-12 rounded-lg flex items-center justify-center bg-blue-100 flex-shrink-0">
+                <svg class="h-7 w-7 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M0 0h11.377v11.372H0zm12.623 0H24v11.372H12.623zM0 12.623h11.377V24H0zm12.623 0H24V24H12.623z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Microsoft 365 / Outlook</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  Connect your Microsoft 365 or Outlook account to sync DMARC reports. Same seamless OAuth experience.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-400">
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Microsoft OAuth integration
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Exchange Online support
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Personal &amp; business accounts
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Integrations Row -->
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">AI Integrations</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Google Gemini Card -->
+          <div class="relative rounded-xl border-2 border-indigo-200 bg-white p-6 shadow-sm">
+            <div class="absolute -top-3 left-6">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-indigo-600 text-white rounded-full">Google Gemini</span>
+            </div>
+            <div class="flex items-start gap-4 mt-2">
+              <div class="h-12 w-12 rounded-lg flex items-center justify-center bg-blue-100 flex-shrink-0">
+                <svg class="h-7 w-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Use Your Gemini API Key</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Add your Google Gemini API key for AI-powered policy recommendations. Designed to work within free tier limits &mdash; pay Google directly with no markup.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-600">
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Optimised for free tier usage
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Your key stays encrypted
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Optional &mdash; works without AI too
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- OpenAI Card - Coming Soon -->
+          <div class="relative rounded-xl border-2 border-dashed border-gray-300 bg-gray-50/50 p-6">
+            <div class="absolute -top-3 left-6">
+              <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-amber-500 text-white rounded-full">Coming Soon</span>
+            </div>
+            <div class="flex items-start gap-4 mt-2">
+              <div class="h-12 w-12 rounded-lg flex items-center justify-center bg-gray-900 flex-shrink-0">
+                <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">OpenAI GPT</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  Use your OpenAI API key for expanded AI capabilities. Choose your preferred model for recommendations.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-sm text-gray-400">
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    GPT-4o &amp; GPT-4o-mini support
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Enhanced analysis capabilities
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Same BYOK flexibility
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 md:py-28">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center px-3 py-1 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full mb-4">Features</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+          Everything you need for<br class="hidden sm:block">DMARC monitoring
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Comprehensive tools to monitor, analyze, and improve your email authentication
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Feature Card 1 -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-indigo-200 transition-all">
+          <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-indigo-100 group-hover:bg-indigo-200 transition-colors">
+            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Connect Your Gmail</h3>
+          <p class="text-gray-600 leading-relaxed">Link your own Gmail or Google Workspace account to automatically sync DMARC reports. Your credentials stay secure with OAuth.</p>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-indigo-200 transition-all">
+          <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-indigo-100 group-hover:bg-indigo-200 transition-colors">
+            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Bring Your Own AI Key</h3>
+          <p class="text-gray-600 leading-relaxed">Use your own Google Gemini API key for AI-powered recommendations. Full control over your AI costs with no markup.</p>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-indigo-200 transition-all">
+          <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-indigo-100 group-hover:bg-indigo-200 transition-colors">
+            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Real-time Alerts</h3>
+          <p class="text-gray-600 leading-relaxed">Receive instant notifications when authentication failures spike, new sources appear, or DNS records change.</p>
+        </div>
+
+        <!-- Feature Card 4 -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-indigo-200 transition-all">
+          <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-indigo-100 group-hover:bg-indigo-200 transition-colors">
+            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Geographic Tracking</h3>
+          <p class="text-gray-600 leading-relaxed">Visualise where your emails are being sent from with interactive world maps and IP geolocation data.</p>
+        </div>
+
+        <!-- Feature Card 5 -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-indigo-200 transition-all">
+          <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-indigo-100 group-hover:bg-indigo-200 transition-colors">
+            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Detailed Analytics</h3>
+          <p class="text-gray-600 leading-relaxed">Track SPF/DKIM pass rates, message volumes, and authentication trends with comprehensive dashboards.</p>
+        </div>
+
+        <!-- Feature Card 6 -->
+        <div class="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-indigo-200 transition-all">
+          <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-indigo-100 group-hover:bg-indigo-200 transition-colors">
+            <svg class="h-6 w-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Source Classification</h3>
+          <p class="text-gray-600 leading-relaxed">Automatically identify and classify sending sources. Match against 50+ known providers and flag suspicious activity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 md:py-28 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center px-3 py-1 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full mb-4">How it works</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">Get started in minutes</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Simple setup, powerful results</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12 relative">
+          <div class="relative text-center">
+            <div class="inline-flex h-14 w-14 md:h-16 md:w-16 rounded-full bg-indigo-600 text-white items-center justify-center text-xl md:text-2xl font-bold mb-6 shadow-lg shadow-indigo-200">1</div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900">Connect your domain</h3>
+            <p class="text-gray-600 leading-relaxed max-w-xs mx-auto">Add your domain and configure DMARC to send reports to us, or sync directly from Gmail.</p>
+          </div>
+          <div class="relative text-center">
+            <div class="inline-flex h-14 w-14 md:h-16 md:w-16 rounded-full bg-indigo-600 text-white items-center justify-center text-xl md:text-2xl font-bold mb-6 shadow-lg shadow-indigo-200">2</div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900">Receive reports</h3>
+            <p class="text-gray-600 leading-relaxed max-w-xs mx-auto">We automatically parse and analyze aggregate and forensic DMARC reports as they arrive.</p>
+          </div>
+          <div class="relative text-center">
+            <div class="inline-flex h-14 w-14 md:h-16 md:w-16 rounded-full bg-indigo-600 text-white items-center justify-center text-xl md:text-2xl font-bold mb-6 shadow-lg shadow-indigo-200">3</div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-900">Get insights</h3>
+            <p class="text-gray-600 leading-relaxed max-w-xs mx-auto">View dashboards, receive alerts, and get AI-powered recommendations to improve security.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Preview -->
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium bg-indigo-50 text-indigo-700 rounded-full mb-4">Pricing</span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">Simple, transparent pricing</h2>
+          <p class="text-lg text-gray-600">Pay only for what you use. All features included.</p>
+        </div>
+
+        <div class="max-w-lg mx-auto border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm">
+          <div class="bg-indigo-50 px-6 py-4 border-b border-indigo-100">
+            <p class="text-sm font-semibold text-center text-indigo-700">Usage-Based Pricing</p>
+          </div>
+          <div class="p-8 bg-white">
+            <div class="text-center mb-8">
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-5xl font-bold text-gray-900">&pound;10</span>
+                <span class="text-gray-600">/month base</span>
+              </div>
+              <p class="text-gray-600 mt-2">+ &pound;3 per domain/month</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4 mb-8">
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600">Example: 5 domains</span>
+                <span class="font-semibold text-gray-900">&pound;25/mo</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">All features included</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">14-day free trial</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Connect your own Gmail &amp; AI keys</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Unlimited team members</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Priority support</span>
+              </li>
+            </ul>
+
+            <a href="pricing.html" class="btn-primary flex items-center justify-center w-full h-12 text-base font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              Calculate Your Price
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-600 mt-6">
+          Prefer to self-host?
+          <a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-medium underline underline-offset-4 hover:text-indigo-500 transition-colors">
+            Deploy with Docker
+          </a>
+          for free.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 md:py-28 bg-indigo-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+          Ready to protect your email reputation?
+        </h2>
+        <p class="text-lg text-indigo-100 mb-10 max-w-xl mx-auto">
+          Join thousands of businesses using DMARC to prevent email spoofing and improve deliverability.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://app.dmarcanalyser.io/login" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg bg-white text-indigo-600 hover:bg-indigo-50 shadow-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            Start Free Trial
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="pricing.html" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg border-2 border-white/30 text-white hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            View Pricing
+          </a>
+        </div>
+        <p class="text-sm text-indigo-200 mt-6">
+          No credit card required. 14-day free trial.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="space-y-4">
+          <a href="/" class="flex items-center space-x-2">
+            <svg class="h-5 w-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            <span class="font-bold text-gray-900">DMARC Analyser</span>
+          </a>
+          <p class="text-sm text-gray-600">DMARC monitoring made simple</p>
+          <p class="text-xs text-gray-500">
+            A <a href="https://redactbox.co.uk" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-500 transition-colors">Redactbox</a> Product
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900">Product</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li><a href="#features" class="hover:text-gray-900 transition-colors">Features</a></li>
+            <li><a href="pricing.html" class="hover:text-gray-900 transition-colors">Pricing</a></li>
+            <li><a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition-colors">Self-Host</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900">Resources</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li><a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition-colors">Documentation</a></li>
+            <li><a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition-colors">GitHub</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900">Legal</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li><a href="https://app.dmarcanalyser.io/privacy" class="hover:text-gray-900 transition-colors">Privacy Policy</a></li>
+            <li><a href="https://app.dmarcanalyser.io/terms" class="hover:text-gray-900 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+        <p>&copy; 2025 Redactbox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      mobileMenuBackdrop.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenuBackdrop.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  </script>
+</body>
+</html>
