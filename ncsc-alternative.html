@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <title>NCSC Mail Check Alternative - DMARC Analyser | 2025 Solution</title>
+  <meta name="description" content="Lost DMARC visibility when NCSC Mail Check ended aggregate reporting? DMARC Analyser restores full monitoring from GBP 10/month. Perfect for UK education, public sector & SMEs. Free self-hosted option.">
+  <meta name="keywords" content="NCSC Mail Check alternative, DMARC monitoring UK, NCSC replacement, email authentication monitoring, DMARC reporting, UK education DMARC, affordable DMARC solution">
+  <meta name="author" content="Redactbox">
+  <link rel="canonical" href="https://dmarcanalyser.io/ncsc-alternative.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dmarcanalyser.io/ncsc-alternative.html">
+  <meta property="og:title" content="Lost Your DMARC Visibility? Restore It With DMARC Analyser">
+  <meta property="og:description" content="NCSC Mail Check stopped aggregate reporting in March 2025. DMARC Analyser restores full visibility for UK organisations. Monitor DMARC from GBP 10/month or self-host for free.">
+  <meta property="og:image" content="https://dmarcanalyser.io/og-image.png">
+  <meta property="og:image:alt" content="DMARC Analyser - NCSC Mail Check Alternative">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NCSC Mail Check Alternative - DMARC Analyser">
+  <meta name="twitter:description" content="NCSC Mail Check already ended aggregate reporting. Restore DMARC visibility with DMARC Analyser - from GBP 10/month or self-host free.">
+  <meta name="twitter:image" content="https://dmarcanalyser.io/og-image.png">
+  <meta name="twitter:creator" content="@redactbox">
+
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#3B82F6',
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3B82F6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            'primary-foreground': '#ffffff',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3B82F6">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DMARC Analyser",
+    "url": "https://dmarcanalyser.io",
+    "logo": "https://dmarcanalyser.io/favicon.ico",
+    "description": "NCSC Mail Check alternative - Real-time DMARC monitoring for UK education, public sector, and SMEs.",
+    "sameAs": [
+      "https://github.com/helliott20/dmarc-analyser"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Redactbox",
+      "url": "https://redactbox.co.uk"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dmarcanalyser.io"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "NCSC Mail Check Alternative",
+        "item": "https://dmarcanalyser.io/ncsc-alternative.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is NCSC Mail Check being retired?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The NCSC (UK National Cyber Security Centre) is retiring Web Check and Mail Check services by 31 March 2026. The NCSC recommended organisations identify suitable commercial alternatives before the end-of-life date. From March 2025, NCSC also discontinued DMARC aggregate reporting in Mail Check, leaving many UK organisations without visibility into their email authentication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is NCSC retiring Mail Check?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NCSC states that commercial alternatives in the External Attack Surface Management (EASM) market have matured since 2017. The NCSC's strategy is to focus resources on areas where it provides unique value, rather than maintaining services where robust commercial alternatives exist. This realignment allows the NCSC to concentrate on delivering solutions where the private sector cannot, or where GCHQ involvement drives unique value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What features did NCSC Mail Check have that I'll lose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mail Check monitored DMARC, SPF, DKIM, and MTA-STS policies. It provided DMARC aggregate (RUA) reporting, DMARC insights, DKIM checks, and TLS reporting. From March 2025, the NCSC discontinued DMARC aggregate reporting, removing your visibility into who is sending email on your behalf and whether those messages pass authentication. This visibility gap increases exposure to phishing, spoofing, and impersonation attacks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is DMARC Analyser better than Mail Check?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DMARC Analyser offers DMARC aggregate reporting that Mail Check discontinued, plus AI-powered policy recommendations, real-time alerts, geographic tracking, and source classification. For education and public sector, we offer cost-effective pricing (GBP 10/month base), free self-hosted option, and easy migration from Mail Check data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I self-host DMARC Analyser for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! DMARC Analyser is open source and fully self-hostable. Deploy with Docker on your own infrastructure at no cost. You maintain complete control over your data and infrastructure. Our hosted version starts at GBP 10/month for organisations preferring managed hosting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is DMARC Analyser suitable for UK education institutions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. DMARC Analyser is ideal for UK universities, colleges, and schools. We understand education sector needs: cost constraints, security requirements, and multi-domain estates. Our pricing model (GBP 10/month base + GBP 3/domain) is significantly more affordable than alternatives. Many education institutions already using Mail Check are switching to DMARC Analyser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I migrate from NCSC Mail Check to DMARC Analyser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Migration is straightforward: (1) Configure your DMARC records to send reports to DMARC Analyser, or (2) Connect your Gmail account via OAuth and we'll auto-discover domains. Historical Mail Check data cannot be imported, but DMARC Analyser begins collecting full aggregate and forensic reports immediately. Setup takes under 5 minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the cost comparison vs Mail Check alternatives?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DMARC Analyser offers the lowest cost NCSC Mail Check alternative: GBP 10/month base + GBP 3 per domain. A typical education institution with 10 domains costs just GBP 40/month. Compare this to competing EASM tools which often cost GBP 50-200+ per month. Plus, you can self-host for free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does DMARC Analyser work for public sector organisations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. DMARC Analyser is suitable for UK public sector bodies. We're GDPR compliant, offer transparent pricing, and provide self-hosting options for organisations with data residency requirements. Many public sector teams are already migrating from Mail Check."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I try DMARC Analyser before committing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. DMARC Analyser offers a 14-day free trial with no credit card required. You get full access to all features. Try the hosted version or deploy the free open-source version to evaluate before deciding."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(to bottom, rgba(99, 102, 241, 0.03), transparent);
+    }
+    .radial-bg {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.1), transparent);
+    }
+    /* Mobile menu animation */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    /* Button focus states for accessibility */
+    .btn-primary:focus-visible {
+      outline: 2px solid #4f46e5;
+      outline-offset: 2px;
+    }
+    .btn-secondary:focus-visible {
+      outline: 2px solid #6b7280;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <div class="container mx-auto flex h-16 items-center justify-between px-4">
+      <a href="/" class="flex items-center space-x-2" title="DMARC Analyser - Email Security Monitoring">
+        <img src="/favicon.svg" alt="DMARC Analyser" class="h-8 w-8">
+        <span class="font-bold text-xl text-gray-900">DMARC Analyser</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#why-migrate" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Why Migrate</a>
+        <a href="#comparison" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Comparison</a>
+        <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
+        <a href="/" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Back to Home</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://app.dmarcanalyser.io/login" class="hidden sm:inline-flex text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Sign In</a>
+        <a href="https://app.dmarcanalyser.io/login" class="btn-primary inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors">
+          Start Free Trial
+        </a>
+        <!-- Mobile menu button -->
+        <button type="button" id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-expanded="false" aria-label="Open main menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl md:hidden">
+      <div class="flex items-center justify-between p-4 border-b">
+        <span class="font-bold text-lg">Menu</span>
+        <button type="button" id="mobile-menu-close" class="rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-label="Close menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="p-4 space-y-2">
+        <a href="#why-migrate" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">Why Migrate</a>
+        <a href="#comparison" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">Comparison</a>
+        <a href="#faq" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">FAQ</a>
+        <a href="/" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50">Back to Home</a>
+        <div class="pt-4 border-t mt-4">
+          <a href="https://app.dmarcanalyser.io/login" class="block px-4 py-3 text-base font-medium text-gray-600 rounded-lg hover:bg-gray-50">Sign In</a>
+          <a href="https://app.dmarcanalyser.io/login" class="mt-2 block w-full text-center px-4 py-3 text-base font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-500">Start Free Trial</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Mobile menu backdrop -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-gray-900/50 z-40 hidden md:hidden" aria-hidden="true"></div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden gradient-bg radial-bg">
+    <div class="container mx-auto px-4 py-16 md:py-20 lg:py-24">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Badge -->
+        <div class="mb-8 inline-flex">
+          <span class="inline-flex items-center px-4 py-1.5 text-sm font-medium border border-red-200 bg-red-50 text-red-700 rounded-full">
+            <svg class="mr-2 h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            NCSC Mail Check aggregate reporting ended March 2025
+          </span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+          <span>Lost Your DMARC Visibility?</span>
+          <br>
+          <span class="text-gray-500">We can help.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+          NCSC stopped sending DMARC aggregate reports in March 2025. If you relied on Mail Check, you've been flying blind since then. DMARC Analyser gives you that visibility back - from £10/month or self-host for free.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a href="https://app.dmarcanalyser.io/login" class="btn-primary inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg bg-blue-600 text-white shadow-md hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all hover:shadow-lg">
+            Start 14-Day Free Trial
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="pricing.html" class="btn-secondary inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500 transition-colors">
+            View Pricing
+          </a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
+          <span class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            14-day free trial
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            No credit card required
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            Free self-hosted option
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="border-y bg-gradient-to-r from-red-50 to-orange-50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">What happened to Mail Check?</h2>
+        <div class="space-y-6">
+          <!-- Timeline Item 1 -->
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-sm flex-shrink-0 line-through">
+                ✓
+              </div>
+              <div class="w-1 h-16 bg-gray-200 mt-2"></div>
+            </div>
+            <div class="pb-6">
+              <h3 class="font-semibold text-gray-500 mb-1">March 2025 <span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5 rounded ml-2">Already happened</span></h3>
+              <p class="text-gray-500">NCSC stopped sending DMARC aggregate reports. If you relied on Mail Check for visibility, that's been gone for months.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm flex-shrink-0 ring-2 ring-blue-500 ring-offset-2">
+                →
+              </div>
+              <div class="w-1 h-16 bg-blue-200 mt-2"></div>
+            </div>
+            <div class="pb-6">
+              <h3 class="font-semibold text-gray-900 mb-1">Now <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded ml-2">You are here</span></h3>
+              <p class="text-gray-600">You need an alternative. DMARC Analyser can restore your visibility today.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="flex gap-6">
+            <div class="flex flex-col items-center">
+              <div class="h-12 w-12 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold text-sm flex-shrink-0">
+                !
+              </div>
+            </div>
+            <div class="pb-6">
+              <h3 class="font-semibold text-gray-900 mb-1">31 March 2026</h3>
+              <p class="text-gray-600">Mail Check shuts down completely. But honestly, the useful part (DMARC reporting) is already gone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Migrate Section -->
+  <section id="why-migrate" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">What you get with DMARC Analyser</h2>
+          <p class="text-lg text-gray-600">Everything Mail Check used to do, plus more</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Feature Card 1 -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100">
+              <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-900">Full DMARC Reporting</h3>
+            <p class="text-gray-600 leading-relaxed">Mail Check stopped sending aggregate reports in March 2025. We give you that back - you'll see who's sending email as your domain and whether it passes authentication.</p>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100">
+              <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-900">AI-Powered Recommendations</h3>
+            <p class="text-gray-600 leading-relaxed">We use AI to help you understand your reports and suggest policy changes. Useful if you're not a DMARC expert (most people aren't).</p>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100">
+              <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-900">Real-Time Alerts</h3>
+            <p class="text-gray-600 leading-relaxed">Get notified when something goes wrong - authentication failures, sudden changes in traffic, or suspicious senders. You don't have to check the dashboard constantly.</p>
+          </div>
+
+          <!-- Feature Card 4 -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100">
+              <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-900">Affordable Pricing</h3>
+            <p class="text-gray-600 leading-relaxed">£10/month base plus £3 per domain. Or self-host it completely free - it's open source.</p>
+          </div>
+
+          <!-- Feature Card 5 -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100">
+              <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12a9 9 0 010-18 9 9 0 0118 0 9 9 0 01-18 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-900">Your Own Infrastructure</h3>
+            <p class="text-gray-600 leading-relaxed">It's open source, so you can run it on your own servers with Docker if you'd rather not use a hosted service. Your data stays yours.</p>
+          </div>
+
+          <!-- Feature Card 6 -->
+          <div class="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-lg hover:border-blue-200 transition-all">
+            <div class="h-12 w-12 rounded-xl flex items-center justify-center mb-5 bg-blue-100">
+              <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-900">Better Analytics</h3>
+            <p class="text-gray-600 leading-relaxed">Interactive dashboards with geographic maps, source breakdowns, and trend analysis. More detailed than what Mail Check offered.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Feature Comparison</h2>
+          <p class="text-lg text-gray-600">How DMARC Analyser compares to NCSC Mail Check</p>
+        </div>
+
+        <div class="overflow-x-auto rounded-lg border border-gray-200">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-gray-200 bg-gray-100">
+                <th class="px-6 py-4 text-left font-semibold text-gray-900">Feature</th>
+                <th class="px-6 py-4 text-center font-semibold text-gray-900">NCSC Mail Check</th>
+                <th class="px-6 py-4 text-center font-semibold text-gray-900">DMARC Analyser</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">DMARC Aggregate (RUA) Reporting</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">Discontinued March 2025</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">DMARC Forensic (RUF) Reporting</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-gray-300 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">No</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">SPF/DKIM Monitoring</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">MTA-STS Monitoring</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">Real-Time Alerts</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-gray-300 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">No</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">AI Policy Recommendations</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-gray-300 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">No</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">Geographic Tracking</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-gray-300 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">No</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">Source Classification</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-gray-300 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">No</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">Open Source / Self-Hostable</td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-gray-300 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  <span class="text-xs text-gray-500">No</span>
+                </td>
+                <td class="px-6 py-4 text-center">
+                  <svg class="h-5 w-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </td>
+              </tr>
+              <tr class="bg-white hover:bg-gray-50">
+                <td class="px-6 py-4 text-gray-900 font-medium">Cost (base/month)</td>
+                <td class="px-6 py-4 text-center text-gray-600 font-medium">Free (Ending)</td>
+                <td class="px-6 py-4 text-center text-green-600 font-semibold">GBP 10 (or free self-hosted)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Migration Guide Section -->
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Easy Migration Process</h2>
+          <p class="text-lg text-gray-600">Switch from Mail Check in under 5 minutes</p>
+        </div>
+
+        <div class="space-y-8">
+          <!-- Step 1 -->
+          <div class="flex gap-6 md:gap-10">
+            <div class="flex flex-col items-center">
+              <div class="h-14 w-14 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">1</div>
+              <div class="w-1 h-24 bg-blue-200 mt-2 hidden md:block"></div>
+            </div>
+            <div class="pb-8">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Sign up for free trial</h3>
+              <p class="text-gray-600 mb-4">Create a DMARC Analyser account with no credit card required. Takes 30 seconds.</p>
+              <code class="bg-gray-100 px-4 py-2 rounded text-sm text-gray-700 inline-block">https://app.dmarcanalyser.io</code>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6 md:gap-10">
+            <div class="flex flex-col items-center">
+              <div class="h-14 w-14 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">2</div>
+              <div class="w-1 h-24 bg-blue-200 mt-2 hidden md:block"></div>
+            </div>
+            <div class="pb-8">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Add your domains</h3>
+              <p class="text-gray-600">Option A: Connect your Gmail account via OAuth - we auto-discover all domains. Option B: Manually add domains and update DMARC records.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6 md:gap-10">
+            <div class="flex flex-col items-center">
+              <div class="h-14 w-14 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">3</div>
+              <div class="w-1 h-24 bg-blue-200 mt-2 hidden md:block"></div>
+            </div>
+            <div class="pb-8">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Configure DMARC reporting</h3>
+              <p class="text-gray-600">Update DMARC record RUA and RUF addresses to point to DMARC Analyser. We provide exact values in the dashboard.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6 md:gap-10">
+            <div class="flex flex-col items-center">
+              <div class="h-14 w-14 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">4</div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Start monitoring</h3>
+              <p class="text-gray-600">Reports begin arriving within 24 hours. View dashboards, set up alerts, and get AI recommendations immediately.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 p-6 bg-blue-50 rounded-lg border border-blue-200">
+          <h3 class="font-semibold text-blue-900 mb-2">No data loss or service interruption</h3>
+          <p class="text-blue-800">Switching is straightforward - update your DNS records to point to us, and you'll start receiving reports within 24-48 hours. Try it free for 14 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Sector Focus -->
+  <section class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium bg-blue-100 text-blue-700 rounded-full mb-4">For UK Education</span>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Built for Universities & Colleges</h2>
+          <p class="text-lg text-gray-600">Why UK education institutions are switching from Mail Check</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Education Feature 1 -->
+          <div class="p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Affordable for Institutions</h3>
+            <p class="text-gray-600">At GBP 10/month base + GBP 3/domain, even universities with 50+ domains pay under GBP 200/month. Budget-friendly for education budgets.</p>
+          </div>
+
+          <!-- Education Feature 2 -->
+          <div class="p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Self-Hosted Option</h3>
+            <p class="text-gray-600">Deploy DMARC Analyser on university infrastructure for free. Keep data on-premises and under your control. Perfect for institutional requirements.</p>
+          </div>
+
+          <!-- Education Feature 3 -->
+          <div class="p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Multi-Domain Management</h3>
+            <p class="text-gray-600">Manage multiple faculty domains, research departments, and alumni domains from one dashboard. Designed for complex education estates.</p>
+          </div>
+
+          <!-- Education Feature 4 -->
+          <div class="p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Security & Compliance</h3>
+            <p class="text-gray-600">GDPR-compliant, transparent data handling, and open-source for audit. Meets institutional security and governance requirements.</p>
+          </div>
+
+          <!-- Education Feature 5 -->
+          <div class="p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Supporting Email Delivery</h3>
+            <p class="text-gray-600">Universities and colleges need to ensure student and staff communications reach inboxes. DMARC monitoring protects institutional reputation.</p>
+          </div>
+
+          <!-- Education Feature 6 -->
+          <div class="p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Migration Support</h3>
+            <p class="text-gray-600">Educational institutions used to Mail Check can migrate to DMARC Analyser with no disruption. Full support during transition.</p>
+          </div>
+        </div>
+
+        <div class="mt-12 p-8 bg-white border-2 border-blue-200 rounded-lg">
+          <p class="text-gray-600 mb-4">If you're at a UK university or college that relied on Mail Check, you've probably noticed the gap since March 2025. We built DMARC Analyser to be affordable enough that education institutions can actually use it.</p>
+          <a href="https://app.dmarcanalyser.io/login" class="inline-flex items-center justify-center h-11 px-6 text-sm font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition-colors">
+            Try DMARC Analyser Free for 14 Days
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Transparent Pricing</h2>
+          <p class="text-lg text-gray-600">No surprises. Cancel anytime.</p>
+        </div>
+
+        <div class="max-w-lg mx-auto border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm">
+          <div class="bg-blue-50 px-6 py-4 border-b border-blue-100">
+            <p class="text-sm font-semibold text-center text-blue-700">Hosted Plan</p>
+          </div>
+          <div class="p-8 bg-white">
+            <div class="text-center mb-8">
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-5xl font-bold text-gray-900">10</span>
+                <span class="text-gray-600">GBP/month</span>
+              </div>
+              <p class="text-gray-600 mt-2">+ GBP 3 per domain/month</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4 mb-8">
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-sm text-gray-600">Example: 10 domains</span>
+                <span class="font-semibold text-gray-900">GBP 40/mo</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-600">Example: 50 domains</span>
+                <span class="font-semibold text-gray-900">GBP 160/mo</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Full DMARC monitoring (RUA & RUF)</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Real-time alerts & notifications</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">AI-powered policy recommendations</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">14-day free trial included</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <svg class="h-5 w-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-gray-700">Bring your own Gmail & API keys</span>
+              </li>
+            </ul>
+
+            <a href="https://app.dmarcanalyser.io/login" class="flex items-center justify-center w-full h-12 text-base font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-500 shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+              Start Free Trial
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-600 mt-8">
+          Prefer complete control?
+          <a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-medium underline underline-offset-4 hover:text-blue-500 transition-colors">
+            Deploy the open-source version
+          </a>
+          on your infrastructure for free.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <details class="group p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900">
+              <span>Is NCSC Mail Check really being retired?</span>
+              <svg class="h-5 w-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Yes. The NCSC announced both services will be retired by 31 March 2026. But importantly, aggregate DMARC reporting already stopped in March 2025 - so if you relied on Mail Check for DMARC visibility, that's already gone.</p>
+          </details>
+
+          <!-- FAQ Item 2 -->
+          <details class="group p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900">
+              <span>Can I access my Mail Check data with DMARC Analyser?</span>
+              <svg class="h-5 w-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Historical Mail Check data cannot be imported directly. However, DMARC Analyser begins collecting full reports immediately upon setup. You'll have comprehensive reporting going forward.</p>
+          </details>
+
+          <!-- FAQ Item 3 -->
+          <details class="group p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900">
+              <span>How long does migration take?</span>
+              <svg class="h-5 w-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Basic setup takes under 5 minutes. Either connect your Gmail account via OAuth or update DMARC record email addresses. Reports arrive within 24 hours.</p>
+          </details>
+
+          <!-- FAQ Item 4 -->
+          <details class="group p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900">
+              <span>Is DMARC Analyser suitable for large institutions with 100+ domains?</span>
+              <svg class="h-5 w-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Yes. Self-hosting works well for large institutions - deploy it on your own servers and manage as many domains as you need. There are no licensing restrictions.</p>
+          </details>
+
+          <!-- FAQ Item 5 -->
+          <details class="group p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900">
+              <span>What if I need help with the migration?</span>
+              <svg class="h-5 w-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Contact us for support during your 14-day free trial. Our team can help with DMARC record configuration, domain migration, and setup.</p>
+          </details>
+
+          <!-- FAQ Item 6 -->
+          <details class="group p-6 bg-white rounded-lg border border-gray-200 hover:border-blue-200 transition-colors cursor-pointer">
+            <summary class="flex items-center justify-between font-semibold text-gray-900">
+              <span>Is my data GDPR-compliant?</span>
+              <svg class="h-5 w-5 text-gray-600 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-gray-600">Yes. DMARC Analyser is GDPR-compliant. We provide transparent data handling, clear privacy policies, and the option to self-host for full data control.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 md:py-28 bg-blue-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+          Get your DMARC visibility back
+        </h2>
+        <p class="text-lg text-blue-100 mb-10 max-w-xl mx-auto">
+          Try it free for 14 days. No credit card needed. Set up takes about 5 minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://app.dmarcanalyser.io/login" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg bg-white text-blue-600 hover:bg-blue-50 shadow-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            Start Free Trial
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="pricing.html" class="inline-flex items-center justify-center h-12 px-8 text-base font-semibold rounded-lg border-2 border-white/30 text-white hover:bg-white/10 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            View Pricing
+          </a>
+        </div>
+        <p class="text-sm text-blue-200 mt-6">
+          No credit card required. 14-day free trial.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="space-y-4">
+          <a href="/" class="flex items-center space-x-2">
+            <img src="/favicon.svg" alt="DMARC Analyser" class="h-6 w-6">
+            <span class="font-bold text-gray-900">DMARC Analyser</span>
+          </a>
+          <p class="text-sm text-gray-600">DMARC monitoring made simple</p>
+          <p class="text-xs text-gray-500">
+            A <a href="https://redactbox.co.uk" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-500 transition-colors">Redactbox</a> Product
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900">Product</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li><a href="/" class="hover:text-gray-900 transition-colors">Home</a></li>
+            <li><a href="pricing.html" class="hover:text-gray-900 transition-colors">Pricing</a></li>
+            <li><a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition-colors">Self-Host</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900">Resources</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li><a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition-colors">Documentation</a></li>
+            <li><a href="https://github.com/helliott20/dmarc-analyser" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 transition-colors">GitHub</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900">Legal</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li><a href="privacy.html" class="hover:text-gray-900 transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-gray-900 transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+        <p>&copy; 2025 Redactbox. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      mobileMenuBackdrop.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenuBackdrop.classList.add('hidden');
+      document.body.style.overflow = '';
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  </script>
+</body>
+</html>
